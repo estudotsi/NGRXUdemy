@@ -21,12 +21,16 @@ export class UsuarioService {
     return this.hhtpClient.get<Usuario>(environment+'Usuarios/'+id);
   }
 
-  // updateUsuario(usuario: Usuario): Observable<Usuario>{
-  //   return this.hhtpClient.post<Usuario>(environment, usuario);
-  // }
+  addUsuario(usuario: Usuario): Observable<Usuario>{
+    return this.hhtpClient.post<Usuario>(environment+'Usuarios', usuario);
+  }
 
-  deleteUsuario(){
+   updateUsuario(usuario: Usuario): Observable<Usuario>{
+    return this.hhtpClient.put<Usuario>(environment+'Usuarios'+usuario.id, usuario);
+   }
 
+  deleteUsuario(id: number): Observable<any>{
+    return this.hhtpClient.delete<number>(environment+'Usuarios'+id);
   }
 
 }

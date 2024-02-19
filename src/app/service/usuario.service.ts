@@ -9,12 +9,13 @@ import { Usuario } from '../models/usuario.model';
 })
 export class UsuarioService {
 
-  private url = environment;
+  private url = environment.url;
 
   constructor(private hhtpClient: HttpClient) { }
 
   getUsuarios(): Observable<Usuario[]>{
-    return this.hhtpClient.get<Usuario[]>(environment+'/Usuarios');
+    console.log("Url: ", this.url)
+    return this.hhtpClient.get<Usuario[]>(this.url+'/Usuarios');
   }
 
   getUsuario(id: number): Observable<Usuario>{

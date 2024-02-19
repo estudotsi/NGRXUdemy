@@ -19,19 +19,19 @@ export class UsuarioService {
   }
 
   getUsuario(id: number): Observable<Usuario>{
-    return this.hhtpClient.get<Usuario>(environment+'Usuarios/'+id);
+    return this.hhtpClient.get<Usuario>(this.url+'/Usuarios'+id);
   }
 
   addUsuario(usuario: Usuario): Observable<Usuario>{
-    return this.hhtpClient.post<Usuario>(environment+'Usuarios', usuario);
+    return this.hhtpClient.post<Usuario>(this.url+'/Usuarios', usuario);
   }
 
    updateUsuario(usuario: Usuario): Observable<Usuario>{
-    return this.hhtpClient.put<Usuario>(environment+'Usuarios'+usuario.id, usuario);
+    return this.hhtpClient.put<Usuario>(this.url+'/Usuarios'+usuario.id, usuario);
    }
 
   deleteUsuario(id: number): Observable<any>{
-    return this.hhtpClient.delete<number>(environment+'Usuarios'+id);
+    return this.hhtpClient.delete<number>(this.url+'/Usuarios'+id);
   }
 
 }

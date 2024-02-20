@@ -35,7 +35,7 @@ export const loadUsuarioSuccess = createAction( usuariosTypeActions.LOAD_USUARIO
 
 export const loadUsuarioFail = createAction( usuariosTypeActions.LOAD_USUARIO_FAIL, props<{ erro: string}>() );
 
-export const createUsuario = createAction( usuariosTypeActions.CREATE_USUARIO, props<{ payload: Usuario }> );
+export const createUsuario = createAction( usuariosTypeActions.CREATE_USUARIO, props<{ payload: Usuario }>() );
 
 export const createUsuarioSuccess = createAction( usuariosTypeActions.CREATE_USUARIO_SUCCESS, props<{ payload: Usuario}>() );
 
